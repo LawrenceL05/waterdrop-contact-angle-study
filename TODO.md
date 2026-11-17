@@ -13,6 +13,18 @@ Updated 2026-11-16. Working format: original experimental evaluation with a supp
 - [x] Record the portable [manifest](data/inventory/image_manifest.json) and [audit summary](data/inventory/audit_summary.json).
 - [x] Define a conditional next pilot milestone: 24 additional fresh droplets to reach five per treatment/time cell if the current 16 groups are independent.
 
+## Existing implementation and recorded results
+
+- [x] Implement the classical pipeline and record 59 Main-image rows, including 57 circle estimates and two failures.
+- [x] Record initial QC for all 59 Main images: 14 good, 12 fixable and 33 bad.
+- [x] Prepare a 15-image annotation candidate list and three corrected masks in the supplied local checkout.
+- [x] Implement U-Net data preparation, training, prediction and evaluation, with a Colab notebook.
+- [x] Record the three-image corrected-label pilot and distinguish it from the expanded 14-image run documented on GitHub.
+- [x] Implement contact-angle photo plotting in the local working copy. This change remains uncommitted and needs validation and publication.
+- [ ] Validate the plotting geometry and publish the local implementation change in WaterDropML after review.
+- [ ] Reconcile local and remote annotation/run manifests, including image overlap, label versions and prior development exposure.
+- [ ] Confirm that the project degree of completion reflects the [implementation snapshot](RESEARCH_PLAN.md#implementation-snapshot-from-the-supplied-waterdropml-folder). Existing mask scores do not establish angle accuracy.
+
 ## 1. Next: annotation protocol and representative batch
 
 - [ ] Select development images covering both treatments, all four times, magnifications, full/partial views and difficult optics.
@@ -23,7 +35,7 @@ Updated 2026-11-16. Working format: original experimental evaluation with a supp
 - [ ] Agree with the advisor on credible reference angles and their uncertainty. Distinguish same-fitter agreement from independent physical accuracy.
 - [ ] Manually annotate the batch; independently repeat a subset to estimate boundary, baseline and angle disagreement.
 - [ ] Document ambiguous cases and adjudication before expanding labeling.
-- [ ] Run a competent classical baseline and record angle error, signed bias, success rate and failure reasons.
+- [ ] Validate the existing classical baseline against agreed reference angles. Record angle error, signed bias, success rate and failure reasons. Re-run after freezing label conventions and any code changes.
 
 ## 2. Resolve provenance and independence
 
@@ -31,7 +43,7 @@ Updated 2026-11-16. Working format: original experimental evaluation with a supp
 - [ ] Assign verified physical-droplet, specimen and acquisition-session IDs; link repeated times where applicable.
 - [ ] Resolve the identities and intended role of the 19 Test-folder images.
 - [ ] Verify acquisition metadata rather than treating one filename date as a session count.
-- [ ] Reconcile images with the earlier 14-image pilot and record prior development/tuning exposure.
+- [ ] Reconcile images and annotation versions from both the three-image pilot and expanded 14-image run. Record prior development/tuning exposure.
 - [ ] Record substrate material, treatment protocol, timing definition, camera settings and calibration.
 - [ ] Complete full-resolution contact-region eligibility review. Contact sheets do not establish angle-reference precision.
 
@@ -47,7 +59,8 @@ Updated 2026-11-16. Working format: original experimental evaluation with a supp
 ## 4. Freeze evaluation and compare methods
 
 - [ ] Select a meaningful angle-error tolerance and required uncertainty with the advisor.
-- [ ] Specify U-Net/SegFormer variants, pretrained weights, tuning budgets, seeds and annotation-time recording.
+- [ ] Reuse the existing U-Net implementation after review. Specify the SegFormer variant, pretrained weights, tuning budgets, seeds and annotation-time recording.
+- [ ] Implement SegFormer and connect its masks to the same downstream geometry before the controlled comparison.
 - [ ] Freeze training/validation/final-test groups before model selection. Keep all times, views, magnifications and both sides of a physical droplet together.
 - [ ] Use specimen/session grouping when required by the generalization claim; document previously inspected development examples.
 - [ ] Hold orientation correction, substrate estimation and downstream angle fitting constant across the main comparison.
