@@ -18,11 +18,33 @@ When does learned droplet segmentation improve contact-angle measurement, and wh
 
 ## Starting evidence
 
-The earlier WaterDropML U-Net pilot used 14 distinct images, with nine training images, three validation images, and two test images. The two test images represent one held-out droplet. Mean test IoU was 95.91%. This establishes preliminary segmentation feasibility. Contact-angle accuracy and performance across independent droplets remain to be measured.
+Two documented U-Net runs provide preliminary segmentation evidence. They have different splits and must remain separate in the plan.
 
-Some pilot annotations extend below the contact line. Review these before using them as reference labels. Previously inspected pilot examples should be identified as development data when designing the final evaluation.
+| Run | Training / validation / test images | Reported result | Interpretation |
+| --- | --- | --- | --- |
+| Local corrected-label pilot, 2026-11-08 | 2 / 1 / 0 | On A3_1_30, U-Net IoU 97.39% versus classical 97.19%, an improvement of 0.20 percentage points. Best epoch 36 of 60. | The validation image also selected the checkpoint. No independent test set or angle-accuracy evaluation. |
+| Expanded run documented in WaterDropML on GitHub | 9 / 3 / 2 | Mean test IoU 95.91%, Dice 97.91%, boundary distance 12.51 full-resolution pixels. Best epoch 13 of 60. | The two test images are views of one named droplet. Some labels extend into reflections. Physical independence and angle accuracy remain unresolved. |
 
-[Earlier training report](https://github.com/LawrenceL05/WaterDropML/blob/main/outputs/handcorrected_20261108/README.md)
+Sources: [three-image pilot report](https://github.com/LawrenceL05/WaterDropML/blob/main/outputs/corrected_pilot_20261108/README.md) and [expanded run report](https://github.com/LawrenceL05/WaterDropML/blob/main/outputs/handcorrected_20261108/README.md). The supplied local checkout contains only the three-image pilot artifacts. Neither run provides an independent final evaluation for this paper.
+
+Review the substrate/contact-region label convention before combining annotations. Record all images used or inspected in either pilot as development exposure when designing the final evaluation.
+
+### Implementation snapshot from the supplied WaterDropML folder
+
+The local implementation was inspected on 2026-11-16. This update records existing files and results. It includes no new training or accuracy experiment.
+
+| Component | Evidence present | Status and remaining work |
+| --- | --- | --- |
+| Classical extraction | `src/dataset.py`, `src/contact_angle.py`, `src/run_baseline.py`, and `outputs/baseline_angles.csv` | Baseline implementation and 59 recorded rows exist. There are 57 numerical circle estimates and two recorded failures. These are measurement outputs, not validated reference accuracy. |
+| Overlay review | `data/qc_review.csv` has 59 rows: 14 good, 12 fixable, 33 bad. There are 57 automatic masks and 57 overlay files. | Initial QC is complete for the 59 Main images. A good QC label is a review decision, not proof of angle accuracy. |
+| Annotation preparation | `data/hand_label_list.csv` lists 15 candidates. `data/masks_gt/` contains three corrected masks. | A candidate list and initial corrections exist. Final label rules, representative coverage, and independent repeat annotation remain open. |
+| Learned segmentation | U-Net preparation, training, prediction, and evaluation scripts plus a Colab notebook | Pipeline and recorded pilots exist. Reproducibility under the paper protocol, broader labels, and independent evaluation remain open. |
+| Angle visualization | Local changes to `src/contact_angle.py` add photo plots with substrate guides, tangent rays, angle arcs, opacity control, and saved-mask input. One generated plot is present. | This plotting change and its README instructions are uncommitted locally. They are not yet published implementation in WaterDropML. Geometry and angle conventions still need validation. |
+| SegFormer | No implementation or experiment was found in the supplied local source | Planned comparator. Select and implement the variant after freezing the evaluation protocol. |
+
+Implementation references: [WaterDropML](https://github.com/LawrenceL05/WaterDropML), [baseline output](https://github.com/LawrenceL05/WaterDropML/blob/main/outputs/baseline_angles.csv), [QC review](https://github.com/LawrenceL05/WaterDropML/blob/main/data/qc_review.csv). The annotation candidate list and plotting changes were inspected locally. The candidate list is absent from the remote default branch, and the plotting changes are uncommitted.
+
+The local 59-image Main set is a subset of the 78-image archive inventory. The 19 original Test-folder images retain unresolved identities. The archive itself has no reference annotations, while the implementation folder has separately created corrected masks. These sources must not be counted as additional independent datasets.
 
 ## Current status — 2026-11-16
 
@@ -34,7 +56,7 @@ The working paper format is an **original experimental evaluation**, supported b
 - Physical-droplet, specimen and acquisition-session independence remain unconfirmed. Establish whether droplet numbers represent fresh deposition at each time or the same droplets followed over time.
 - All filenames carry 2026-10-15. That date alone does not establish acquisition-session count. The original Test folder does not define an approved model holdout.
 - The earlier 14-image pilot and the current archive must not be summed as independent datasets without checking overlap.
-- Immediate work is a representative development annotation batch and annotation protocol, followed by reference measurements and a classical baseline. [Prioritized TODO list](TODO.md).
+- Classical extraction and initial QC already exist. Immediate work is to finalize the annotation/reference protocol, reconcile the two pilot datasets, expand corrected labels, and validate the existing baseline against credible angle references. [Prioritized TODO list](TODO.md).
 
 ### Next collection milestone
 
@@ -151,4 +173,4 @@ Move from the measurement application and a concrete example to the literature-s
 - [ ] Check the selected venue's formatting, anonymization, and submission requirements.
 - [ ] Complete advisor/coauthor review.
 
-The immediate priorities are a representative development annotation batch and protocol, resolution of physical-droplet identities, credible angle references, and a classical baseline. See [TODO.md](TODO.md) for ordered actions and unresolved decisions.
+The immediate priorities are a representative development annotation batch and protocol, resolution of physical-droplet identities, credible angle references, and validation of the existing classical baseline. See [TODO.md](TODO.md) for ordered actions and unresolved decisions.
