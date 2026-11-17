@@ -1,6 +1,6 @@
 # Research plan
 
-Updated 2026-11-14.
+Updated 2026-11-16.
 
 ## Submission goal
 
@@ -23,6 +23,24 @@ The earlier WaterDropML U-Net pilot used 14 distinct images, with nine training 
 Some pilot annotations extend below the contact line. Review these before using them as reference labels. Previously inspected pilot examples should be identified as development data when designing the final evaluation.
 
 [Earlier training report](https://github.com/LawrenceL05/WaterDropML/blob/main/outputs/handcorrected_20261108/README.md)
+
+## Current status — 2026-11-16
+
+The working paper format is an **original experimental evaluation**, supported by a literature review. A review-only paper would need a different plan and would not require the proposed model experiments or data collection. Final scope and venue remain for advisor agreement.
+
+- The [working gap assessment](RESEARCH_GAP.md) identifies the contribution as determining when learned segmentation improves reliable angle measurements enough to justify labeling effort, and when contact-region or substrate-line errors limit that improvement. Architecture comparison alone is insufficient novelty.
+- The supplied archive has 78 images: 59 Main images in 16 named droplet groups, plus 19 original Test-folder images with unresolved identities. [Inventory and coverage](data/inventory/README.md).
+- Image IDs IMG001–IMG078 and named-group IDs D001–D016 are assigned. No exact-file or identical-pixel duplicate sets were found.
+- Physical-droplet, specimen and acquisition-session independence remain unconfirmed. Establish whether droplet numbers represent fresh deposition at each time or the same droplets followed over time.
+- All filenames carry 2026-10-15. That date alone does not establish acquisition-session count. The original Test folder does not define an approved model holdout.
+- The earlier 14-image pilot and the current archive must not be summed as independent datasets without checking overlap.
+- Immediate work is a representative development annotation batch and annotation protocol, followed by reference measurements and a classical baseline. [Prioritized TODO list](TODO.md).
+
+### Next collection milestone
+
+There are two named groups in each of eight treatment/time cells. A practical next pilot milestone is five fresh physical droplets per cell: 40 total, requiring 24 more if the current 16 groups are physically distinct. This is a provisional collection milestone, not a powered final sample size or publication-readiness guarantee.
+
+Collect across independently logged sessions and specimens, using the same view protocol for both treatments. Include a whole-droplet view with both contact regions plus useful close-ups. Final training budgets and test-group counts depend on credible reference angles, observed variability, required precision and condition coverage. Multiple views and two sides of a droplet are correlated observations.
 
 ## Work plan and completion criteria
 
@@ -133,4 +151,4 @@ Move from the measurement application and a concrete example to the literature-s
 - [ ] Check the selected venue's formatting, anonymization, and submission requirements.
 - [ ] Complete advisor/coauthor review.
 
-The immediate priorities are the literature-backed contribution, independent angle references, and adequate coverage of independent test droplets.
+The immediate priorities are a representative development annotation batch and protocol, resolution of physical-droplet identities, credible angle references, and a classical baseline. See [TODO.md](TODO.md) for ordered actions and unresolved decisions.

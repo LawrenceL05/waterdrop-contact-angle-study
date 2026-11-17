@@ -1,0 +1,324 @@
+{
+  "archive": "Contact angle.zip",
+  "archive_sha256": "249c0a65e8ed339781589bb619cf1a403955fa9e2eb8e1f6ce7538f680f42a48",
+  "image_count": 78,
+  "main_image_count": 59,
+  "test_image_count": 19,
+  "named_droplet_group_count": 16,
+  "confirmed_independent_droplet_count": null,
+  "filename_date_count": 1,
+  "main_magnification_counts": {
+    "20": 7,
+    "30": 24,
+    "50": 28
+  },
+  "exact_duplicate_sets": [],
+  "identical_pixel_sets": [],
+  "groups": [
+    {
+      "droplet_group_id": "D001",
+      "filename_group": "20261015_A1_1",
+      "treatment": "Without UVO",
+      "time_minutes": 0,
+      "droplet_number": 1,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG001",
+        "IMG002",
+        "IMG003"
+      ]
+    },
+    {
+      "droplet_group_id": "D002",
+      "filename_group": "20261015_A1_2",
+      "treatment": "Without UVO",
+      "time_minutes": 0,
+      "droplet_number": 2,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG004",
+        "IMG005",
+        "IMG006"
+      ]
+    },
+    {
+      "droplet_group_id": "D003",
+      "filename_group": "20261015_A2_1",
+      "treatment": "Without UVO",
+      "time_minutes": 30,
+      "droplet_number": 1,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG007",
+        "IMG008",
+        "IMG009"
+      ]
+    },
+    {
+      "droplet_group_id": "D004",
+      "filename_group": "20261015_A2_2",
+      "treatment": "Without UVO",
+      "time_minutes": 30,
+      "droplet_number": 2,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG010",
+        "IMG011",
+        "IMG012"
+      ]
+    },
+    {
+      "droplet_group_id": "D005",
+      "filename_group": "20261015_A3_1",
+      "treatment": "Without UVO",
+      "time_minutes": 60,
+      "droplet_number": 1,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG013",
+        "IMG014",
+        "IMG015"
+      ]
+    },
+    {
+      "droplet_group_id": "D006",
+      "filename_group": "20261015_A3_2",
+      "treatment": "Without UVO",
+      "time_minutes": 60,
+      "droplet_number": 2,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG016",
+        "IMG017",
+        "IMG018"
+      ]
+    },
+    {
+      "droplet_group_id": "D007",
+      "filename_group": "20261015_A4_1",
+      "treatment": "Without UVO",
+      "time_minutes": 180,
+      "droplet_number": 1,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG019",
+        "IMG020",
+        "IMG021"
+      ]
+    },
+    {
+      "droplet_group_id": "D008",
+      "filename_group": "20261015_A4_2",
+      "treatment": "Without UVO",
+      "time_minutes": 180,
+      "droplet_number": 2,
+      "image_count": 3,
+      "magnifications": [
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG022",
+        "IMG023",
+        "IMG024"
+      ]
+    },
+    {
+      "droplet_group_id": "D009",
+      "filename_group": "20261015_B1_1",
+      "treatment": "With UVO",
+      "time_minutes": 0,
+      "droplet_number": 1,
+      "image_count": 4,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG025",
+        "IMG026",
+        "IMG027",
+        "IMG028"
+      ]
+    },
+    {
+      "droplet_group_id": "D010",
+      "filename_group": "20261015_B1_2",
+      "treatment": "With UVO",
+      "time_minutes": 0,
+      "droplet_number": 2,
+      "image_count": 1,
+      "magnifications": [
+        30
+      ],
+      "image_ids": [
+        "IMG029"
+      ]
+    },
+    {
+      "droplet_group_id": "D011",
+      "filename_group": "20261015_B2_1",
+      "treatment": "With UVO",
+      "time_minutes": 30,
+      "droplet_number": 1,
+      "image_count": 5,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG030",
+        "IMG031",
+        "IMG032",
+        "IMG033",
+        "IMG034"
+      ]
+    },
+    {
+      "droplet_group_id": "D012",
+      "filename_group": "20261015_B2_2",
+      "treatment": "With UVO",
+      "time_minutes": 30,
+      "droplet_number": 2,
+      "image_count": 5,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG035",
+        "IMG036",
+        "IMG037",
+        "IMG038",
+        "IMG039"
+      ]
+    },
+    {
+      "droplet_group_id": "D013",
+      "filename_group": "20261015_B3_1",
+      "treatment": "With UVO",
+      "time_minutes": 60,
+      "droplet_number": 1,
+      "image_count": 5,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG040",
+        "IMG041",
+        "IMG042",
+        "IMG043",
+        "IMG044"
+      ]
+    },
+    {
+      "droplet_group_id": "D014",
+      "filename_group": "20261015_B3_2",
+      "treatment": "With UVO",
+      "time_minutes": 60,
+      "droplet_number": 2,
+      "image_count": 5,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG045",
+        "IMG046",
+        "IMG047",
+        "IMG048",
+        "IMG049"
+      ]
+    },
+    {
+      "droplet_group_id": "D015",
+      "filename_group": "20261015_B4_1",
+      "treatment": "With UVO",
+      "time_minutes": 180,
+      "droplet_number": 1,
+      "image_count": 5,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG050",
+        "IMG051",
+        "IMG052",
+        "IMG053",
+        "IMG054"
+      ]
+    },
+    {
+      "droplet_group_id": "D016",
+      "filename_group": "20261015_B4_2",
+      "treatment": "With UVO",
+      "time_minutes": 180,
+      "droplet_number": 2,
+      "image_count": 5,
+      "magnifications": [
+        20,
+        30,
+        50
+      ],
+      "image_ids": [
+        "IMG055",
+        "IMG056",
+        "IMG057",
+        "IMG058",
+        "IMG059"
+      ]
+    }
+  ],
+  "limitations": [
+    "Date comes from filenames, not verified acquisition metadata.",
+    "Test folder is an original folder name, not an approved model holdout.",
+    "Physical independence across times and specimens is unconfirmed.",
+    "No reference contact angles or masks are included in the archive.",
+    "Visibility of every contact region requires individual review."
+  ],
+  "naming_source": "User-provided filename explanation, 2026-11-16",
+  "assessment_date": "2026-11-16",
+  "collection_milestone": {
+    "groups_per_treatment_time_cell": 5,
+    "treatment_time_cells": 8,
+    "total_named_groups": 40,
+    "additional_fresh_droplets_if_current_groups_independent": 24,
+    "status": "Planning milestone; final sample size not determined"
+  }
+}
